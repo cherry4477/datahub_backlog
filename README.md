@@ -5,10 +5,8 @@
 
 ##客户端
 * 对所发布的tag进行健康检查，并发送给heartbeat 
-
 * 抽象文件操作，以支持插件式文件访问
 * 客户端删除Item、Tag的处理 `产品组完善需求`
-
 * 数据提供方在pull完成后调用transaction提供的接口告知 `有前置任务`
 * 代码走读缺陷修改
 * entrypoint优化，通过隧道实现
@@ -24,7 +22,6 @@
 
 ##后端
 * heartbeat收到daemon的tag健康检查情况后发送msg，每日一次，仅发送错误信息，通知数据提供者 `产品组完善需求`
-
 * heartbeat提供查询接口，仅管理员权限。供repo和transaction查询tag状态。`开发阶段`
 * repo返回item和tag的时候，考虑tag健康状态 `产品组完善需求`
 * transaction，pull生成accesstoken的时候判断可用性 `刘旭`
@@ -38,7 +35,6 @@
 * Server API review和整理
 * 单元测试的优化和自动的集成测试
 * kafka版本升级到0.9
-
 * 后台表结构review和整理数据字典文档，数据库初始化和每个阶段的升级文档
 * 支持windows客户端
 * 客户端支持插入到execl和其他软件中
