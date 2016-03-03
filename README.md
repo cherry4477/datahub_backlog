@@ -7,6 +7,8 @@
 * 微信分享。
 * 微信登录。
 * 前端css、js、html的拆分。
+* 删除Repo。
+* 申请注册。
 * **已经完成的需求放这里，标明版本和时间**
 
 ##客户端
@@ -23,7 +25,8 @@
 * 自动pull tag，通过jobs实现
 * pub后保存配置数据到Datahub及恢复处理
 * 自动升级
-***
+* 删除Item
+* 删除Tag
 * **已经完成的需求放这里，标明版本和时间**
 
 ##后端
@@ -33,6 +36,8 @@
 * transaction，pull生成accesstoken的时候判断可用性 `刘旭`
 * transaction提供一个api接口给daemon在发送成功后调用，并通过它来确认pull量 `刘旭`
 * heatbeat的redis持久化到mysql中
+* 删除Repo的api返回
+* 管理员群发邮件、群发消息给用户。
 
 ##运营
 * datahub上发布的数据补充数据字典说明 `刘亮亮`
