@@ -9,6 +9,7 @@
 * 前端css、js、html的拆分。
 * 删除Repo。
 * 申请注册。
+* web socket。
 * **已经完成的需求放这里，标明版本和时间**
 
 * 微信分享 V1.2 2016.03.04
@@ -26,30 +27,47 @@
 * 客户端证书、加密传输。
 * PULL的三方认证方案。
 * 命令自动联想
-* 批量发布tag
+* 批量发布tag,通过tag名或者符合某种名称规则的tag
+* 批量删除tag，同一个item下的tag。
+* 批量pull tag，在一个item下可直接通过tag名下载多个，或者满足某种规则的tag名下载多个，或者某个item下全部tag。
 * 自动pull tag，通过jobs实现
 * pub后保存配置数据到Datahub及恢复处理
 * 自动升级
+* help 命令的规范化。
+* subs 命令将item在线状态、tag健康状态体现出来。
+* subs repo/item：tag 的逻辑调整，需要先判断用户是否有订购repo/item,再判断tag的存在性。
  **已经完成的需求放这里，标明版本和时间**
-* 删除Item
-* 删除Tag
-—testtest
+* 删除Item V1.2 2016.03.04
+* 删除Tag V1.2 2016.03.04
+
 
 ##后端
 * heartbeat收到daemon的tag健康检查情况后发送msg，每日一次，仅发送错误信息，通知数据提供者 `产品组完善需求`
 * heartbeat提供查询接口，仅管理员权限。供repo和transaction查询tag状态。`开发阶段`
-* repo返回item和tag的时候，考虑tag健康状态 `产品组完善需求`
+* repo返回item和tag的时候，考虑tag健康状态 `产品组完善需求，WEB页面不错调整，建议Client端做subs repo/item 时候带出item状态、tag状态`
 * transaction，pull生成accesstoken的时候判断可用性 `刘旭`
 * transaction提供一个api接口给daemon在发送成功后调用，并通过它来确认pull量 `刘旭`
 * heatbeat的redis持久化到mysql中
 * 管理员群发邮件、群发消息给用户。
+* sqlite3 数据健康检查。
+* web socket。 `刘旭`
 **已经完成的需求放这里，标明版本和时间**
-* 删除Repo的api返回。  
+* 删除Item，tag。   [1.1 20160304]
+* 删除Repo的api返回。  [1.2 20160309]
+* 订单统计数据。  [1.2 20160309]
 
 
 
 ##运营
-* datahub上发布的数据补充数据字典说明 `刘亮亮`
+* datahub上发布的数据补充数据字典说明 
+* 个推的数据，接到datahub上。
+* 长沙位置数据，接到datahub上。
+**已经完成的需求放这里，标明版本和时间**
+ * datahub上发布的数据补充数据字典说明 【1.3 20160311】
+* 个推的数据（广州），接到datahub上。【1.3 20160311】
+* 长沙位置数据，接到datahub上。【1.3 20160311】
+ 
+ 
  
 ##创意阶段
 * Server API review和整理
@@ -74,6 +92,11 @@
 * DH产品竞品分析update。
 * DH中文名注册。
 * DH商标的修改与确认。
+* * R、Rython熟悉。叶鹏介绍。
+* 增加订单累统计数据需求。
+* api集成需求设计
+* 数据地图需求设计。指定公司内部账号可以看见。包括已经发布到datahub上数据内容的展示、协议框架类的数据的编辑。
+* 需求信息发布、数据资源信息发布。指定公司内部账号可以看见。
  **已经完成的需求放这里，标明版本和时间**
 
 * 集成外部APIGateway方案讨论。 V1.2 2016.03.04
