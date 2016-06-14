@@ -193,6 +193,53 @@ api gateway（陈一庚负责的版本）
 * Openshift上dh的功能验证。【6.12-6.17 全体】
 * DACP联调测试。【6.12-6.17 全体】
 * API测试。【6.12-6.17 全体】
+* client端命令输出标准化。命令语法、命令用途、命令举例、命令参数说明。参考oc命令的输出。
+输入oc get --help
+输出 Usage:
+  	oc get [(-o|--output=)json|yaml|wide|go-template=...|	go-template-file=...|jsonpath=...|jsonpath-file=...] 	(TYPE [NAME | -l label] | TYPE/NAME ...) [flags] 	[options]
+
+Examples:  
+
+ 	 # List all pods in ps output format.
+  	$ oc get pods  
+  	
+
+  	# List a single replication controller with specified ID in ps output format.
+  	$ oc get rc redis
+
+  	# List all pods and show more details about them.
+  	$ oc get -o wide pods
+
+  	# List a single pod in JSON output format.
+  	$ oc get -o json pod redis-pod
+
+  	# Return only the status value of the specified pod.
+  	$ oc get -o template pod redis-pod --template={{.currentState.status}}
+
+Options:  
+
+   	--all-namespaces=false: If present, list the 	requested object(s) across all namespaces. Namespace in current context is ignored even if specified with --namespace.  
+   	
+      --export=false: If true, use 'export' for the resources.  Exported resources are stripped of cluster-specific information.  
+      
+  	-f, --filename=[]: Filename, directory, or URL to a 	file identifying the resource to get from a server.  
+  	
+ 	 -L, --label-columns=[]: Accepts a comma separated 	list of labels that are going to be presented as 	columns. Names are case-sensitive. You can also use multiple flag statements like -L label1 -L label2...
+      --no-headers=false: When using the default output, don't print headers.  
+      
+ 	 -o, --output='': Output format. One of: json|yaml|wide|name|go-template=...|go-template-file=...|jsonpath=...|jsonpath-file=... See golang template [http://golang.org/pkg/text/template/#pkg-overview] and jsonpath template [http://releases.k8s.io/release-1.2/docs/user-guide/jsonpath.md].
+      --output-version='': Output the formatted object with the given group version (for ex: 'extensions/v1beta1').  
+      
+	  -l, --selector='': Selector (label query) to filter on  
+	  
+ 	 -a, --show-all=true: When printing, show all resources (false means hide terminated pods.)
+      --show-labels=false: When printing, show all labels as the last column (default hide labels column)
+      --sort-by='': If non-empty, sort list types using this field specification.  The field specification is expressed as a JSONPath expression (e.g. '{.metadata.name}'). The field in the API resource specified by this JSONPath expression must be an integer or a string.  
+      
+  	-t, --template='': Template string or path to template file to use when -o=go-template, -o=go-template-file. The template format is golang templates [http://golang.org/pkg/text/template/#pkg-overview].  
+  	
+  	-w, --watch=false: After listing/getting the requested object, watch for changes.
+      --watch-only=false: Watch for changes to the requested object(s), without listing/getting first.
 ——————————————————————————————————— 
  **已经完成的需求放这里，标明版本和时间**
 * 集成外部APIGateway方案讨论。 【V1.2 2016.03.04】
